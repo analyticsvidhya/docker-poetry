@@ -1,0 +1,11 @@
+ARG BASE_IMAGE
+ARG PYTHON_VERSION
+FROM ${BASE_IMAGE}:${PYTHON_VERSION}
+ARG POETRY_VERSION
+# Install build dependencies
+RUN apk update && \
+    apk add libffi-dev build-base openssl-dev && \
+    pip install cffi && \
+    pip --no-cache-dir install poetry==$POETRY_VERSION && \
+    poetry config virtualenvs.create false
+

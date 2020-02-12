@@ -1,0 +1,9 @@
+ARG BASE_IMAGE
+ARG PYTHON_VERSION
+FROM ${BASE_IMAGE}:${PYTHON_VERSION}
+ARG POETRY_VERSION
+# Install build dependencies
+RUN apt-get update && \
+    pip install --no-cache-dir poetry==$POETRY_VERSION && \
+    rm -rf /var/lib/apt/lists/* && \
+    poetry config virtualenvs.create false

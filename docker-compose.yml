@@ -1,0 +1,91 @@
+version: '3.4'
+services:
+  python36:
+    image: analyticsvidhya/python-poetry:3.6
+    build:
+      context: .
+      dockerfile: /Dockerfile
+      args:
+          BASE_IMAGE: python
+          PYTHON_VERSION: 3.6
+          POETRY_VERSION: 1.0.3
+
+  python37:
+    image: analyticsvidhya/python-poetry:3.7
+    build:
+      context: .
+      dockerfile: /Dockerfile
+      args:
+        BASE_IMAGE: python
+        PYTHON_VERSION: 3.7
+        POETRY_VERSION: 1.0.3
+
+  python38:
+    image: analyticsvidhya/python-poetry:3.8
+    build:
+      context: .
+      dockerfile: /Dockerfile
+      args:
+        BASE_IMAGE: python
+        PYTHON_VERSION: 3.8
+        POETRY_VERSION: 1.0.3
+
+  pythonslim36:
+    image: analyticsvidhya/python-poetry-slim:3.6
+    build:
+      context: .
+      dockerfile: /Dockerfile.slim
+      args:
+          BASE_IMAGE: python
+          PYTHON_VERSION: 3.6-slim
+          POETRY_VERSION: 1.0.3
+
+  pythonslim37:
+    image: analyticsvidhya/python-poetry-slim:3.7
+    build:
+      context: .
+      dockerfile: /Dockerfile.slim
+      args:
+        BASE_IMAGE: python
+        PYTHON_VERSION: 3.7-slim
+        POETRY_VERSION: 1.0.3
+
+  pythonslim38:
+    image: analyticsvidhya/python-poetry-slim:3.8
+    build:
+      context: .
+      dockerfile: /Dockerfile.slim
+      args:
+        BASE_IMAGE: python
+        PYTHON_VERSION: 3.8-slim
+        POETRY_VERSION: 1.0.3
+
+  pythonalpine36:
+    image: analyticsvidhya/python-poetry-alpine:3.6
+    build:
+      context: .
+      dockerfile: /Dockerfile-alpine
+      args:
+        BASE_IMAGE: python
+        PYTHON_VERSION: 3.6-alpine
+        POETRY_VERSION: 1.0.3
+
+  pythonalpine37:
+    image: analyticsvidhya/python-poetry-alpine:3.7
+    build:
+      context: .
+      dockerfile: /Dockerfile-alpine
+      args:
+        BASE_IMAGE: python
+        PYTHON_VERSION: 3.7-alpine
+        POETRY_VERSION: 1.0.3
+
+  pythonalpine38:
+    image: analyticsvidhya/python-poetry-alpine:3.8
+    build:
+      context: .
+      dockerfile: /Dockerfile-alpine
+      args:
+        BASE_IMAGE: python
+        PYTHON_VERSION: 3.8-alpine
+        POETRY_VERSION: 1.0.3
